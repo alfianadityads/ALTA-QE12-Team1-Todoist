@@ -18,3 +18,14 @@ Feature: Get a Project
     Examples:
       | id          |
       | 23199236232 |
+
+
+  @Project @Todoist
+  @Negative-Case
+  Scenario Outline: Get a project with ID path filled by string should fail then return 400 response code
+    Given Get a project with ID path filled by string "<id>"
+    When Send get a project
+    Then Should return 400 Bad Request status code
+    Examples:
+      | id           |
+      | asfjkewknsaf |

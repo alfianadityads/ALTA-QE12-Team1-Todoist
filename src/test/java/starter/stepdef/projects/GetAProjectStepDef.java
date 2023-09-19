@@ -52,4 +52,10 @@ public class GetAProjectStepDef {
     public void shouldReturnNotFoundStatusCode(int statusCode) {
         SerenityRest.then().statusCode(statusCode);
     }
+
+//    Negative Case 2
+    @Given("Get a project with ID path filled by string {string}")
+    public void getAProjectWithIDPathFilledByString(String id) {
+        todoistAPI.getAProject(id);
+    }
 }
