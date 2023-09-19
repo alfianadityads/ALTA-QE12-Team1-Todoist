@@ -58,4 +58,16 @@ public class GetAProjectStepDef {
     public void getAProjectWithIDPathFilledByString(String id) {
         todoistAPI.getAProject(id);
     }
+
+//    Negative Case 3
+    @Given("Get a project with ID path filled by special char {string}")
+    public void getAProjectWithIDPathFilledBySpecialChar(String id) {
+        todoistAPI.getAProject(id);
+    }
+
+//    Negative Case 4
+    @Given("Get a project with blank ID path {string}")
+    public void getAProjectWithBlankIDPath(String id) {
+        todoistAPI.getAProject(id);
+    }
 }
