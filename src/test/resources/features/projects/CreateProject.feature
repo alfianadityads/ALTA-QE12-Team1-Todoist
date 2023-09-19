@@ -22,3 +22,10 @@ Feature: Create a New Project
     Given Post create new project with name filled integer request body "CreateProjectNameInt.json"
     When Send post create a new project
     Then Should return 400 Bad Request status code
+
+  @Project @Todoist
+    @Negative-Case
+    Scenario: Create new project with name filled special char should fail then return 400 response code
+    Given Post create new project with name filled special char request body "CreateProjectNameSpecialChar.json"
+    When Send post create a new project
+    Then Should return 400 Bad Request status code

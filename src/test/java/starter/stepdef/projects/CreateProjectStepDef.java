@@ -65,4 +65,11 @@ public class CreateProjectStepDef {
         File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
         todoistAPI.postCreateNewProject(json);
     }
+
+//    Negative Case 3
+    @Given("Post create new project with name filled special char request body {string}")
+    public void postCreateNewProjectWithNameFilledSpecialCharRequestBody(String jsonFile) {
+        File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
+        todoistAPI.postCreateNewProject(json);
+    }
 }
