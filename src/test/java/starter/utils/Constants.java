@@ -5,6 +5,8 @@ public class Constants {
     public static String BEARER_TOKEN = "fbdb830f5fbb77eabcd758d187c4e96602e1314e";
     public static String BASE_URL = "https://api.todoist.com/rest/v2";
     public static String DIR = System.getProperty("user.dir");
+    public static String ID_PATH = "";
+    public static String AVAILABLE_ID_PATH = "";
 
 
 

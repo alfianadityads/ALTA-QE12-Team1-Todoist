@@ -23,4 +23,11 @@ public class TodoistAPI {
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
+
+    @Step("Get a Project")
+    public void getAProject(String idPath) {
+        Constants.ID_PATH = idPath;
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
+    }
 }
