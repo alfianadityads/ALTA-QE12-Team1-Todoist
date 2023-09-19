@@ -2,6 +2,7 @@ package starter.stepdef.projects;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
@@ -38,5 +39,17 @@ public class GetAProjectStepDef {
     public void validateValidGetAProjectJSONSchema(String jsonFile) {
         File json = new File(Constants.PROJECT_JSON_SCHEMA + jsonFile);
         SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+
+//  Negative Case 1
+    @Given("Get a project with unavailable path ID {string}")
+    public void getAProjectWithUnavailablePathID(String id) {
+        todoistAPI.getAProject(id);
+    }
+
+    @Then("Should return {int} Not Found status code")
+    public void shouldReturnNotFoundStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
     }
 }
