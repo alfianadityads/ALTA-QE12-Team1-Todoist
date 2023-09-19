@@ -11,7 +11,14 @@ Feature: Create a New Project
 
   @Project @Todoist
     @Negative-Case
-    Scenario: create new project with blank name should fail then return 400 response code
+    Scenario: Create new project with blank name should fail then return 400 response code
     Given Post create new project with blank name request body "CreateProjectBlankName.json"
+    When Send post create a new project
+    Then Should return 400 Bad Request status code
+
+  @Project @Todoist
+    @Negative-Case
+    Scenario: Create new project with name filled integer should fail then return 400 response code
+    Given Post create new project with name filled integer request body "CreateProjectNameInt.json"
     When Send post create a new project
     Then Should return 400 Bad Request status code
