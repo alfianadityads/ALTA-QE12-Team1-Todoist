@@ -18,6 +18,7 @@ public class CreateProjectStepDef {
     @Steps
     TodoistAPI todoistAPI;
 
+//    Positive case
     @Given("Post create new project with valid request body {string}")
     public void postCreateNewProjectWithValidRequestBody(String jsonFile) {
         File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
@@ -44,5 +45,17 @@ public class CreateProjectStepDef {
     public void validateValidCreateANewProjectJSONSchema(String jsonFile) {
         File json = new File(Constants.PROJECT_JSON_SCHEMA + jsonFile);
         SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+//    Negative case
+    @Given("Post create new project with blank name request body {string}")
+    public void postCreateNewProjectWithBlankNameRequestBody(String jsonFile) {
+        File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
+        todoistAPI.postCreateNewProject(json);
+    }
+
+    @Then("Should return {int} Bad Request status code")
+    public void shouldReturnBadRequestStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
     }
 }
