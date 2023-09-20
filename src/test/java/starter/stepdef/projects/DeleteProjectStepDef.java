@@ -38,4 +38,10 @@ public class DeleteProjectStepDef {
     public void deleteAProjectWithIDPathFilledByString(String idPath) {
         todoistAPI.deleteAProject(idPath);
     }
+
+//    Negative Case 3
+    @Given("Delete a project with ID path filled by special char {string}")
+    public void deleteAProjectWithIDPathFilledBySpecialChar(String idPath) {
+        todoistAPI.deleteAProject(idPath);
+    }
 }
