@@ -39,3 +39,13 @@ Feature: Delete a Project
     Examples:
       | id       |
       | #^!^%^&! |
+
+  @Project @Todoist
+    @Positive-Case
+    Scenario Outline: Delete a project with blank ID path should fail then return 400 response code
+    Given Delete a project with blank ID path "<id>"
+    When Send delete a project
+    Then Should return 400 Bad Request status code
+    Examples:
+      | id |
+      |    |
