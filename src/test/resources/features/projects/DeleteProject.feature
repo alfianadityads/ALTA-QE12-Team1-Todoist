@@ -19,3 +19,13 @@ Feature: Delete a Project
     Examples:
       | id          |
       | 23199236232 |
+
+  @Project @Todoist
+    @Positive-Case
+    Scenario Outline: Delete a project with ID path filled by string should fail then return 400 response code
+    Given Delete a project with ID path filled by string "<id>"
+    When Send delete a project
+    Then Should return 400 Bad Request status code
+    Examples:
+      | id        |
+      | dfqwrerrq |
