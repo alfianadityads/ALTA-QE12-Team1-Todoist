@@ -39,4 +39,11 @@ public class UpdateProjectStepDef {
         File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
         todoistAPI.updateAProject(Constants.AVAILABLE_ID_PATH, json);
     }
+
+//    Negative Case 2
+    @Given("Get a project with available ID path {string} and invalid request body {string}")
+    public void getAProjectWithAvailableIDPathAndInvalidRequestBody(String idPath, String jsonFile) {
+        File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
+        todoistAPI.updateAProject(Constants.AVAILABLE_ID_PATH, json);
+    }
 }

@@ -18,3 +18,13 @@ Feature: Update a Project
     Examples:
       | id          |
       | 23199236232 |
+
+  @Project @Todoist
+    @Negative-Case
+    Scenario Outline: Update a project with available ID path and invalid request body should fail then return 400 response code
+    Given Get a project with available ID path "<id>" and invalid request body "UpdateInvalidProject.json"
+    When Send update a project
+    Then Should return 400 Bad Request status code
+    Examples:
+      | id         |
+      | 2320066922 |
