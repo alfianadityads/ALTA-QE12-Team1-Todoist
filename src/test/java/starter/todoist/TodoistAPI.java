@@ -39,4 +39,11 @@ public class TodoistAPI {
                 .contentType(ContentType.JSON)
                 .body(jsonFile);
     }
+
+    @Step("Delete a Project")
+    public void deleteAProject(String idPath) {
+        Constants.ID_PATH = idPath;
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
+    }
 }

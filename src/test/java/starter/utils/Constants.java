@@ -14,6 +14,7 @@ public class Constants {
     public static String CREATE_PROJECT_URL = BASE_URL + "/projects";
     public static String GET_PROJECT_URL = BASE_URL + "/projects";
     public static String UPDATE_PROJECT_URL = BASE_URL + "/projects/";
+    public static String DELETE_PROJECT_URL = BASE_URL + "/projects/";
     public static String PROJECT_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/projects/";
     public static String PROJECT_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/projects/";
 
