@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class UpdateProjectStepDef {
     @Steps
     TodoistAPI todoistAPI;
-    @Given("Get a project with available ID path and valid request body {string}")
+    @Given("Update a project with available ID path and valid request body {string}")
     public void getAProjectWithAvailableIDPathAndValidRequestBody(String jsonFile) {
         File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
         todoistAPI.updateAProject(Constants.AVAILABLE_ID_PATH, json);
@@ -34,15 +34,21 @@ public class UpdateProjectStepDef {
     }
 
 //    Negative Case 1
-    @Given("Get a project with unavailable ID path {string} and valid request body {string}")
+    @Given("Update a project with unavailable ID path {string} and valid request body {string}")
     public void getAProjectWithUnavailableIDPathAndValidRequestBody(String idPath, String jsonFile) {
         File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
         todoistAPI.updateAProject(Constants.AVAILABLE_ID_PATH, json);
     }
 
 //    Negative Case 2
-    @Given("Get a project with available ID path {string} and invalid request body {string}")
+    @Given("Update a project with available ID path {string} and invalid request body {string}")
     public void getAProjectWithAvailableIDPathAndInvalidRequestBody(String idPath, String jsonFile) {
+        File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
+        todoistAPI.updateAProject(Constants.AVAILABLE_ID_PATH, json);
+    }
+
+    @Given("Update a project with available ID path {string} and blank request body {string}")
+    public void getAProjectWithAvailableIDPathAndBlankRequestBody(String idPath, String jsonFile) {
         File json = new File(Constants.PROJECT_REQ_BODY + jsonFile);
         todoistAPI.updateAProject(Constants.AVAILABLE_ID_PATH, json);
     }
