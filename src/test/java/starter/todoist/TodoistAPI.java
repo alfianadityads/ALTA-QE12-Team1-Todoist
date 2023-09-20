@@ -30,4 +30,13 @@ public class TodoistAPI {
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
+
+    @Step("Update a Project")
+    public void updateAProject(String idPath, File jsonFile) {
+        Constants.ID_PATH = idPath;
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
+                .contentType(ContentType.JSON)
+                .body(jsonFile);
+    }
 }

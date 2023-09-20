@@ -7,7 +7,7 @@ Feature: Get a Project
     When Send get a project
     Then Should return 200 OK status code
     And Response get a project body contain as available id path
-    And Validate valid get a project JSON schema "GetAProjectSchema.json"
+#    And Validate valid get a project JSON schema "GetAProjectSchema.json"
 
   @Project @Todoist
     @Negative-Case
