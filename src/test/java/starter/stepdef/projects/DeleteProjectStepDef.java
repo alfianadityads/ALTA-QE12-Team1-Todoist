@@ -19,7 +19,7 @@ public class DeleteProjectStepDef {
 
     @When("Send delete a project")
     public void sendDeleteAProject() {
-        SerenityRest.when().get(Constants.DELETE_PROJECT_URL + Constants.ID_PATH);
+        SerenityRest.when().get(Constants.DELETE_PROJECT_URL);
     }
 
     @Then("Should return {int} No Content status code")

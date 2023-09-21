@@ -42,8 +42,8 @@ public class TodoistAPI {
 
     @Step("Delete a Project")
     public void deleteAProject(String idPath) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
 
