@@ -25,16 +25,12 @@ public class GetAllCommentsStepDef {
     public void sendGetCreateANewComment() {
         SerenityRest.when().get(Constants.GET_ALL_COMMENTS_URL);
     }
-//    @And("Response body array contain {string}")
-//    public void responseBodyArrayComment(String arrayContent) {
-//        SerenityRest.and().body(TodoistResponses.ARRAY_CONTENT, equalTo(arrayContent));
-//    }
-    @And("Get all comment response body contain {string}")
-    public void responseBodyStringGetAllComment(String name) {
-        SerenityRest.and().body(TodoistResponses.NAME, equalTo(name));
-    }
     @Then("Get all comment should return status code {int} OK")
     public void getAllCommentShouldReturnStatusCodeOK(int respCode) {
         SerenityRest.then().statusCode(respCode);
+    }
+    @And("Get all comment response body contain {string}")
+    public void responseBodyStringGetAllComment(String name) {
+        SerenityRest.and().body(TodoistResponses.NAME, equalTo(name));
     }
 }

@@ -34,6 +34,6 @@ public class CreateANewCommentStepDef {
     }
     @And("Create new comment response body contain {string}")
     public void createNewCommentResponseBodyContain(String id) {
-        SerenityRest.and().body(TodoistResponses.ID,equalTo(id));
+        SerenityRest.and().body(TodoistResponses.PROJECT_ID,equalTo(id));
     }
 }

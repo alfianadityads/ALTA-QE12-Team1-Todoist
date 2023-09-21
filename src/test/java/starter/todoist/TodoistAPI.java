@@ -63,15 +63,15 @@ public class TodoistAPI {
     }
     @Step("Get a Comment")
     public void getAComment(String idPath) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
 
     @Step("Update a Comment")
     public void updateAComment(String idPath, File jsonFile) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
                 .contentType(ContentType.JSON)
                 .body(jsonFile);
@@ -79,8 +79,8 @@ public class TodoistAPI {
 
     @Step("Delete a Comment")
     public void deleteAComment(String idPath) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
 }
