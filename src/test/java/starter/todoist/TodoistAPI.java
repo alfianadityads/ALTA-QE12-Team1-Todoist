@@ -48,13 +48,14 @@ public class TodoistAPI {
     }
 
 //    COMMENTS FEATURE
-    @Step("Get all projects")
-    public void getAllComments() {
+    @Step("Get all comments")
+    public void getAllComments(String id) {
     SerenityRest.given()
+            .pathParam("id", id)
             .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
 }
     @Step("Post create a New Comment")
-    public void postCreateNewComment(File jsonFile) {
+    public void postCreateANewComment(File jsonFile) {
     SerenityRest.given()
             .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
             .contentType(ContentType.JSON)
@@ -62,15 +63,15 @@ public class TodoistAPI {
     }
     @Step("Get a Comment")
     public void getAComment(String idPath) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
 
     @Step("Update a Comment")
     public void updateAComment(String idPath, File jsonFile) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
                 .contentType(ContentType.JSON)
                 .body(jsonFile);
@@ -78,8 +79,8 @@ public class TodoistAPI {
 
     @Step("Delete a Comment")
     public void deleteAComment(String idPath) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
 }
