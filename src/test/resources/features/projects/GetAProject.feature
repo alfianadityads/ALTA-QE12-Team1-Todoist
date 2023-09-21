@@ -2,11 +2,14 @@ Feature: Get a Project
 
   @Project @Todoist
     @Positive-Case
-    Scenario: Get a project with available ID path should success then return 200 response code
-    Given Get a project with available path ID
+    Scenario Outline: Get a project with available ID path should success then return 200 response code
+    Given Get a project with available path ID "2319923692"
     When Send get a project
     Then Should return 200 OK status code
-    And Response get a project body contain as available id path
+    And Response get a project body contain as available id path "<id>"
+    Examples:
+      | id         |
+      | 2319923692 |
 #    And Validate valid get a project JSON schema "GetAProjectSchema.json"
 
   @Project @Todoist
@@ -22,10 +25,10 @@ Feature: Get a Project
 
   @Project @Todoist
     @Negative-Case
-    Scenario Outline: Get a project with ID path filled by string should fail then return 400 response code
+    Scenario Outline: Get a project with ID path filled by string should fail then return 404 response code
     Given Get a project with ID path filled by string "<id>"
     When Send get a project
-    Then Should return 400 Bad Request status code
+    Then Should return 404 Not Found status code
     Examples:
         | id           |
         | asfjkewknsaf |
@@ -35,7 +38,7 @@ Feature: Get a Project
     Scenario Outline: Get a project with ID path filled by special char should fail then return 400 response code
     Given Get a project with ID path filled by special char "<id>"
     When Send get a project
-    Then Should return 400 Bad Request status code
+    Then Should return 404 Not Found status code
     Examples:
       | id       |
       | #^!^%^&! |
@@ -45,7 +48,7 @@ Feature: Get a Project
     Scenario Outline: Get a project with blank ID should fail then return 400 response code
     Given Get a project with blank ID path "<id>"
     When Send get a project
-    Then Should return 400 Bad Request status code
+    Then Should return 404 Not Found status code
     Examples:
       | id |
       |    |
