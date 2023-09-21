@@ -23,7 +23,7 @@ public class GetAllProjectsStepDef {
 
     @When("Send get all projects")
     public void sendGetAllProjects() {
-        SerenityRest.when().get(Constants.GET_PROJECT_URL);
+        SerenityRest.when().get(Constants.GET_ALL_PROJECTS);
     }
     @And("Response body array contain {string}")
     public void responseBodyArrayContain(String arrayName) {
