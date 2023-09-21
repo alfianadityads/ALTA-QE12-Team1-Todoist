@@ -22,6 +22,8 @@ public class Constants {
 //    COMMENTS FEATURE
     public static String CREATE_COMMENTS_URL = BASE_URL + "/comments";
     public static String GET_COMMENTS_URL = BASE_URL + "/comments";
+    public static String UPDATE_COMMENT_URL = BASE_URL + "/comments/";
+    public static String DELETE_COMMENT_URL = BASE_URL + "/comments/";
     public static String COMMENTS_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/comments/";
     public static String COMMENTS_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/comments/";
 
