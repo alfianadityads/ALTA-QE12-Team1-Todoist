@@ -33,8 +33,8 @@ public class TodoistAPI {
 
     @Step("Update a Project")
     public void updateAProject(String idPath, File jsonFile) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
                 .contentType(ContentType.JSON)
                 .body(jsonFile);
@@ -42,8 +42,8 @@ public class TodoistAPI {
 
     @Step("Delete a Project")
     public void deleteAProject(String idPath) {
-        Constants.ID_PATH = idPath;
         SerenityRest.given()
+                .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
 

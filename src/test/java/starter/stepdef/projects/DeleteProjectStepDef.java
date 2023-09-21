@@ -19,7 +19,7 @@ public class DeleteProjectStepDef {
 
     @When("Send delete a project")
     public void sendDeleteAProject() {
-        SerenityRest.when().get(Constants.DELETE_PROJECT_URL + Constants.ID_PATH);
+        SerenityRest.when().delete(Constants.DELETE_PROJECT_URL);
     }
 
     @Then("Should return {int} No Content status code")
@@ -49,5 +49,10 @@ public class DeleteProjectStepDef {
     @Given("Delete a project with blank ID path {string}")
     public void deleteAProjectWithBlankIDPath(String idPath) {
         todoistAPI.deleteAProject(idPath);
+    }
+
+    @Then("Should return {int} Method Not Allowed status code")
+    public void shouldReturnMethodNotAllowedStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
     }
 }
