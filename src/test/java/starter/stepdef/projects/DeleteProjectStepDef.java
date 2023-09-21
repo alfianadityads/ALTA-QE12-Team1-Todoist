@@ -50,4 +50,9 @@ public class DeleteProjectStepDef {
     public void deleteAProjectWithBlankIDPath(String idPath) {
         todoistAPI.deleteAProject(idPath);
     }
+
+    @Then("Should return {int} Method Not Allowed status code")
+    public void shouldReturnMethodNotAllowedStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
+    }
 }

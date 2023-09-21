@@ -30,7 +30,7 @@ Feature: Delete a Project
 
   @Project @Todoist
     @Positive-Case
-    Scenario: Delete a project with blank ID path should fail then return 400 response code
+    Scenario: Delete a project with blank ID path should fail then return 405 response code
     Given Delete a project with blank ID path ""
     When Send delete a project
-    Then Should return 400 Bad Request status code
+    Then Should return 405 Method Not Allowed status code
