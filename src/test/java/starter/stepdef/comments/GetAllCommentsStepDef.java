@@ -15,24 +15,26 @@ import static org.hamcrest.Matchers.equalTo;
 public class GetAllCommentsStepDef {
     @Steps
     TodoistAPI todoistAPI;
-    @Given("Get all comments with valid id path")
-    public void getAllCommentsWithValidIdPath() {
-        todoistAPI.getAllComments();
+
+    //Positive Case
+    @Given("Get all comments with valid id path {string}")
+    public void getAllCommentsWithValidIdPath(String id) {
+        todoistAPI.getAllComments(id);
     }
     @When("Send get all comments")
-    public void sendPostCreateANewComment() {
-        SerenityRest.when().post(Constants.CREATE_COMMENTS_URL);
+    public void sendGetCreateANewComment() {
+        SerenityRest.when().get(Constants.GET_ALL_COMMENTS_URL);
     }
-    @And("Response body array contain {string}")
-    public void responseBodyArrayContain(String arrayName) {
-        SerenityRest.and().body(TodoistResponses.ARRAY_NAME, equalTo(arrayName));
-    }
-    @Then("Should return {int} OK status code")
-    public void shouldReturnOKStatusCode(int statusCode) {
-        SerenityRest.then().statusCode(statusCode);
-    }
-    @And("Response body string contain {string}")
-    public void responseBodyStringContain(String name) {
+//    @And("Response body array contain {string}")
+//    public void responseBodyArrayComment(String arrayContent) {
+//        SerenityRest.and().body(TodoistResponses.ARRAY_CONTENT, equalTo(arrayContent));
+//    }
+    @And("Get all comment response body contain {string}")
+    public void responseBodyStringGetAllComment(String name) {
         SerenityRest.and().body(TodoistResponses.NAME, equalTo(name));
+    }
+    @Then("Get all comment should return status code {int} OK")
+    public void getAllCommentShouldReturnStatusCodeOK(int respCode) {
+        SerenityRest.then().statusCode(respCode);
     }
 }

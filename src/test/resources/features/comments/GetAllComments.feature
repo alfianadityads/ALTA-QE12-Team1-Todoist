@@ -3,7 +3,10 @@ Feature: Get All Comments
   @Comments @Todoist
   @Positive-Case
   Scenario: Get all comments should success then return 200 response code
-    Given Get all comments with valid id path
+    Given Get all comments with valid id path "2320066922"
     When Send get all comments
-    Then Should return 200 OK status code
-    And Response body string contain "Ousia"
+    Then Get all comment should return status code 200 OK
+    And Get all comment response body contain "hello bre"
+#    Examples:
+#      | id         |
+#      | 2319923744 |

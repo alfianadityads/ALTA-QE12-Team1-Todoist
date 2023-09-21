@@ -48,13 +48,14 @@ public class TodoistAPI {
     }
 
 //    COMMENTS FEATURE
-    @Step("Get all projects")
-    public void getAllComments() {
+    @Step("Get all comments")
+    public void getAllComments(String id) {
     SerenityRest.given()
+            .pathParam("id", id)
             .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
 }
     @Step("Post create a New Comment")
-    public void postCreateNewComment(File jsonFile) {
+    public void postCreateANewComment(File jsonFile) {
     SerenityRest.given()
             .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
             .contentType(ContentType.JSON)
