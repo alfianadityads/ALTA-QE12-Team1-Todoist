@@ -3,18 +3,18 @@
 <summary><h1 style="display-inline:block">TODOIST APP</h1></summary>
 Group Project Team 1 <br/>
 <a href="https://docs.google.com/spreadsheets/d/1fFIs1UVqWOzbGK5iIvr5-NSWUBYlp8Ow_twiCTULbMI/edit#gid=1797173335" target="blank"><img src="https://img.shields.io/badge/-Test%20Scenario-181717?style=for-the-badge&logo=microsoft-excel&color=121B4F&logoColor=white" /></a>
-<a href="" target="blank"><img src="https://img.shields.io/badge/-Presentation%20Todoist APP-181717?style=for-the-badge&logo=microsoft-PowerPoint&color=121B4F&logoColor=white" /></a>
+<a href="https://docs.google.com/presentation/d/1N0vRHRsmXU8n69_ge9bmmmaELglWJQtX9vOgCgUTMKk/edit#slide=id.g2476c887dc0_0_74" target="blank"><img src="https://img.shields.io/badge/-Presentation%20Todoist APP-181717?style=for-the-badge&logo=microsoft-PowerPoint&color=121B4F&logoColor=white" /></a>
 <a href="https://developer.todoist.com/rest/v2/?shell#overview" target="blank"><img src="https://img.shields.io/badge/-API%20Documentation-181717?style=for-the-badge&logo=swagger&color=121B4F&logoColor=white" /></a>
 
 
 </div>
 
 ## About TODOIST APP
-Todoist APP is a tremendous way to keep track of professional and personal projects and tasks, make lists, collaborate at work, and keep track everything. This app help become more productive.
+A task and project management application used to organize tasks, to-do lists, and projects. Todoist API allows developers to interact with data and functionality from Todoist programmatically.
 
 ## Report
-![ReportAPI](https://github.com/ukifar/Template-API-Testing/assets/117880402/6f391772-1d55-451b-a699-d7ad70063fa7)
-![ReportAPI2](https://github.com/ukifar/Template-API-Testing/assets/117880402/2bb290fd-9503-439d-a36b-f802edf74fe4)
+<img width="100%" src="./doc/todoist_1.png"><br/>
+<img width="100%" src="./doc/todoist_1.png"><br/>
 
 ## Tools
 <div>
