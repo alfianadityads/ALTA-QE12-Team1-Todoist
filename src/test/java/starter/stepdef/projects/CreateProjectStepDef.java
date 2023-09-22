@@ -44,7 +44,7 @@ public class CreateProjectStepDef {
     @And("Validate valid create a new project JSON schema {string}")
     public void validateValidCreateANewProjectJSONSchema(String jsonFile) {
         File json = new File(Constants.PROJECT_JSON_SCHEMA + jsonFile);
-        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
 //    Negative case 1
