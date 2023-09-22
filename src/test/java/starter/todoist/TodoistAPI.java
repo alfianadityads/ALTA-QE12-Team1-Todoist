@@ -3,13 +3,15 @@ package starter.todoist;
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
+import org.hamcrest.Matcher;
 import starter.utils.Constants;
 
 import java.io.File;
 
 public class TodoistAPI {
 
-//    PROJECTS FEATURE
+
+    //    PROJECTS FEATURE
     @Step("Post create a New Project")
     public void postCreateNewProject(File jsonFile) {
         SerenityRest.given()
@@ -83,4 +85,42 @@ public class TodoistAPI {
                 .pathParam("id", idPath)
                 .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN);
     }
+
+//  SECTION FEATURE
+    @Step ("Get All Sections")
+    public void getAllSections(String id) {
+        SerenityRest.given()
+                .pathParam("id",id)
+                .headers("Authorization","Bearer" + Constants.BEARER_TOKEN);
+    }
+
+    @Step ("Create A New Section")
+    public void postCreateNewSection(File jsonFile) {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
+                .contentType(ContentType.JSON)
+                .body(jsonFile);
+    }
+
+    @Step ("Delete A Section")
+    public void deleteASection(String idPath) {
+        SerenityRest.given()
+                .pathParam("id",idPath)
+                .headers("Authorization","Bearer" + Constants.BEARER_TOKEN);
+    }
+    @Step ("Get A Single Section")
+    public void getASingleSection(String idPath) {
+        SerenityRest.given()
+                .pathParam("id",idPath)
+                .headers("Authorization","Bearer" + Constants.BEARER_TOKEN);
+    }
+    @Step ("Update A Section")
+    public void updateASection(String idPath, File jsonFile) {
+        SerenityRest.given()
+                .pathParam("id",idPath)
+                .headers("Authorization", "Bearer " + Constants.BEARER_TOKEN)
+                .contentType(ContentType.JSON)
+                .body(jsonFile);
+    }
+
 }

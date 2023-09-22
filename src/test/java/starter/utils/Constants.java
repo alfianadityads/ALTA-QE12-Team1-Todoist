@@ -29,5 +29,15 @@ public class Constants {
     public static String COMMENTS_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/comments/";
     public static String COMMENTS_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/comments/";
 
+//  SECTIONS FEATURE
+
+    public static String CREATE_SECTION_URL = BASE_URL + "/sections";
+    public static String GET_SINGLE_SECTION_URL = BASE_URL + "/sections/{id}";
+    public static String GET_ALL_SECTIONS_URL = BASE_URL + "/sections?project_id={id}";
+    public static String UPDATE_SECTION_URL = BASE_URL + "/sections/{id}";
+    public static String DELETE_SECTION_URL = BASE_URL + "/sections/{id}";
+    public static String SECTION_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/sections/";
+    public static String SECTION_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/sections/";
+
 }
 
