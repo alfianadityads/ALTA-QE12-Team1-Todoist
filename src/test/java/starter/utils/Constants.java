@@ -25,6 +25,7 @@ public class Constants {
     public static String GET_COMMENT_URL = BASE_URL + "/comments/{id}";
     public static String GET_ALL_COMMENTS_URL = BASE_URL + "/comments?project_id={id}";
     public static String UPDATE_COMMENT_URL = BASE_URL + "/comments/{id}";
+    public static String UPDATE_COMMENT_ID = BASE_URL + "/comments/{id}";
     public static String DELETE_COMMENT_URL = BASE_URL + "/comments/{id}";
     public static String COMMENTS_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/comments/";
     public static String COMMENTS_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/comments/";
