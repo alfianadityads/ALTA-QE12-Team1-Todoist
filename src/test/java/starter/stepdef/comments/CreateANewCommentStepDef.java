@@ -36,4 +36,36 @@ public class CreateANewCommentStepDef {
     public void createNewCommentResponseBodyContain(String id) {
         SerenityRest.and().body(TodoistResponses.PROJECT_ID,equalTo(id));
     }
+
+    //Negative Case 1
+    @Given("Post create new comment with blank id request body {string}")
+    public void postCreateNewCommentWithBlankIdRequestBodyAnd(String jsonFile) {
+        File json = new File(Constants.COMMENTS_REQ_BODY+jsonFile);
+        todoistAPI.postCreateANewComment(json);
+    }
+    @Then("Create new comment should return status code {int} Bad Request")
+    public void createNewCommentShouldReturnStatusCodeBadRequest(int respondCode) {
+        SerenityRest.then().statusCode(respondCode);
+    }
+
+    //Negative Case 2
+    @Given("Post create new comment with content filled integer request body {string}")
+    public void postCreateNewCommentWithContentFilledIntegerRequestBody(String jsonFile) {
+        File json = new File(Constants.COMMENTS_REQ_BODY+jsonFile);
+        todoistAPI.postCreateANewComment(json);
+    }
+
+    //Negative Case 3
+    @Given("Post create new comment with content filled special char request body {string}")
+    public void postCreateNewCommentWithContentFilledSpecialCharRequestBody(String jsonFile) {
+        File json = new File(Constants.COMMENTS_REQ_BODY+jsonFile);
+        todoistAPI.postCreateANewComment(json);
+    }
+
+    //Negative Case 4
+    @Given("Post create new comment with blank request body {string}")
+    public void postCreateNewCommentWithBlankRequestBody(String jsonFile) {
+        File json = new File(Constants.COMMENTS_REQ_BODY+jsonFile);
+        todoistAPI.postCreateANewComment(json);
+    }
 }

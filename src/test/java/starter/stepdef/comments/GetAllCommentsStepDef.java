@@ -33,4 +33,22 @@ public class GetAllCommentsStepDef {
     public void responseBodyStringGetAllComment(String name) {
         SerenityRest.and().body(TodoistResponses.NAME, equalTo(name));
     }
+
+    //Negative Case 1
+    @Given("Get all comment with invalid id path {string}")
+    public void getAllCommentWithInvalidIdPath(String id) {
+        todoistAPI.getAllComments(id);
+    }
+    @Then("Get all comments should return status code {int} Bad Request")
+    public void getAllCommentsShouldReturnStatusCodeBadRequest(int respCode) {
+        SerenityRest.then().statusCode(respCode);
+    }
+
+    //Negative Case 2
+    @Given("Get all comment with blank id path {string}")
+    public void getAllCommentWithBlankIdPath(String id) {
+        todoistAPI.getAllComments(id);
+    }
+
+
 }
