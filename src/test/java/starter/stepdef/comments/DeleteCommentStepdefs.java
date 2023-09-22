@@ -41,9 +41,20 @@ public class DeleteCommentStepdefs {
     public void deleteACommentWithBlankIDPath(String id) {
         todoistAPI.deleteAComment(id);
     }
-
     @Then("Delete a comment should return status code {int} Bad Request")
     public void deleteACommentShouldReturnStatusCodeBadRequest(int respCode) {
         SerenityRest.then().statusCode(respCode);
+    }
+
+    //Negative Case 3
+    @Given("Delete a comment with ID path string {string}")
+    public void deleteACommentWithIDPathString(String id) {
+        todoistAPI.deleteAComment(id);
+    }
+
+    //Negative Case 4
+    @Given("Delete a comment with ID path special char {string}")
+    public void deleteACommentWithIDPathSpecialChar(String id) {
+        todoistAPI.deleteAComment(id);
     }
 }
