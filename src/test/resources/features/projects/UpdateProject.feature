@@ -7,10 +7,11 @@ Feature: Update a Project
     When Send update a project
     Then Should return 200 OK status code
     And Response body contain "hello"
+    And Validate valid update a project JSON schema "UpdateProjectSchema.json"
     Examples:
       | id         |
       | 2320066922 |
-#    And Validate valid update a project JSON schema "UpdateProjectSchema.json"
+
 
   @Project @Todoist
     @Negative-Case
