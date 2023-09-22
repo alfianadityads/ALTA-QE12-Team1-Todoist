@@ -22,17 +22,29 @@ public class DeleteASectionStepDef {
     public void sendDeleteDeleteASection() {
         SerenityRest.when().delete(Constants.DELETE_SECTION_URL);
     }
+    @Then("Delete section should return {int} No Content status code")
+    public void deleteSectionShouldReturnNoContentStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
+    }
 
     //    Negative case 1
     @Given("Delete delete a section with unavailable ID path {string}")
     public void deleteDeleteASectionWithUnavailableIDPath(String idPath) {
         todoistAPI.deleteASection(idPath);
     }
+    @Then("Delete section should return {int} Not Found status code")
+    public void deleteSectionShouldReturnNoFoundStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
+    }
 
     //    Negative case 2
     @Given("Delete delete a section with ID path filled by string {string}")
     public void deleteDeleteASectionWithIDPathFilledByString(String idPath) {
         todoistAPI.deleteASection(idPath);
+    }
+    @Then("Delete section should return {int} Bad Request status code")
+    public void deleteSectionShouldReturnBadRequestStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
     }
 
     //    Negative case 3
@@ -48,13 +60,4 @@ public class DeleteASectionStepDef {
     }
 
 
-    @Then("Delete section should return {int} No Content status code")
-    public void deleteSectionShouldReturnNoContentStatusCode(int statusCdde) {
-        SerenityRest.then().statusCode(statusCdde);
-    }
-
-    @Then("Delete section should return {int} Bad Request status code")
-    public void deleteSectionShouldReturnBadRequestStatusCode(int statusCode) {
-        SerenityRest.then().statusCode(statusCode);
-    }
 }

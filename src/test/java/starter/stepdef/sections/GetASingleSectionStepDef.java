@@ -7,7 +7,10 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.todoist.TodoistAPI;
+import starter.todoist.TodoistResponses;
 import starter.utils.Constants;
+
+import static org.hamcrest.Matchers.equalTo;
 
 import java.io.File;
 
@@ -16,17 +19,15 @@ public class GetASingleSectionStepDef {
     TodoistAPI todoistAPI;
 
     @Given("get a single section {string}")
-    public void getASingleSection(String idPath) {
-        todoistAPI.getASingleSection(idPath);
+    public void getASingleSection(String id) {
+        todoistAPI.getASingleSection(id);
     }
     @When("Send get a single sections")
     public void sendGetASingleSections() {
-        SerenityRest.when().get(Constants.GET_SINGLE_SECTION_URL + Constants.ID_PATH);
+        SerenityRest.when().get(Constants.GET_SINGLE_SECTION_URL);
     }
-    @And("Validate valid get a single sections JSON schema {string}")
-    public void validateValidGetASingleSectionsJSONSchema(String jsonFile) {
-        File json = new File(Constants.SECTION_JSON_SCHEMA +jsonFile);
-        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    @And("Section Response body contain {string}")
+    public void sectionResponseBodyContain(String id) {
+        SerenityRest.and().body(TodoistResponses.ID, equalTo(id));
     }
-
 }

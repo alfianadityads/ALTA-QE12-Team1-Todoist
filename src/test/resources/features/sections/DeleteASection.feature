@@ -12,7 +12,7 @@ Feature: Delete A Sections
     Scenario: Delete a section with unavailable ID path should fail then return 404 response code
     Given Delete delete a section with unavailable ID path "1234321"
     When Send delete delete a section
-    Then Delete section should return 404 No Content status code
+    Then Delete section should return 404 Not Found status code
 
   @Project @Todoist
     @Negative-Case
