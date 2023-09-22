@@ -7,10 +7,11 @@ Feature: Get a Project
     When Send get a project
     Then Should return 200 OK status code
     And Response get a project body contain as available id path "<id>"
+    And Validate valid get a project JSON schema "GetAProjectSchema.json"
     Examples:
       | id         |
       | 2319923692 |
-#    And Validate valid get a project JSON schema "GetAProjectSchema.json"
+
 
   @Project @Todoist
     @Negative-Case
