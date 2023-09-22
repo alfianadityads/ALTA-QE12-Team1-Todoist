@@ -10,6 +10,6 @@ public class TodoistResponses {
 
 // SECTION FEATURE
 
-    public static String ARRAY_ID ="[4].id";
-    public static String SECTION_ID = "id";
+    public static String ARRAY_NAME_SECTION ="[3].name";
+
 }

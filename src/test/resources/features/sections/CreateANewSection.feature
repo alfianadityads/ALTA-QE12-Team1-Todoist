@@ -13,7 +13,7 @@ Feature: Create a New Sections
     Scenario: Create a new section with valid name and invalid project id should fail then return 400 response code
     Given Post create a new section with valid name and invalid project id "CreateSectionInvalidId.json"
     When Send post create a new section
-    Then Should return 400 Bad Request status code
+    Then Should return 400 Not Found status code
 
   @Project @Todoist
     @Negative-Case
