@@ -15,7 +15,7 @@ public class GetASingleSectionStepDef {
     @Steps
     TodoistAPI todoistAPI;
 
-    @Given("get a single section{string}")
+    @Given("get a single section {string}")
     public void getASingleSection(String idPath) {
         todoistAPI.getASingleSection(idPath);
     }

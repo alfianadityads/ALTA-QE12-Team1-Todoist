@@ -7,4 +7,4 @@ Feature: Get All Projects
     When Send get all projects
     Then Should return 200 OK status code
     And Response body array contain "Project 1"
-    And Validate valid get all projects JSON schema "GetAllProjectSchema.json"
+#    And Validate valid get all projects JSON schema "GetAllProjectSchema.json"

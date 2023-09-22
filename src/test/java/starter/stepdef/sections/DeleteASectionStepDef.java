@@ -23,11 +23,6 @@ public class DeleteASectionStepDef {
         SerenityRest.when().delete(Constants.DELETE_SECTION_URL);
     }
 
-    @Then("Should return {int} No Content status code")
-    public void shouldReturnNoContentStatusCode(int statusCode) {
-        SerenityRest.then().statusCode(statusCode);
-    }
-
     //    Negative case 1
     @Given("Delete delete a section with unavailable ID path {string}")
     public void deleteDeleteASectionWithUnavailableIDPath(String idPath) {
@@ -53,4 +48,13 @@ public class DeleteASectionStepDef {
     }
 
 
+    @Then("Delete section should return {int} No Content status code")
+    public void deleteSectionShouldReturnNoContentStatusCode(int statusCdde) {
+        SerenityRest.then().statusCode(statusCdde);
+    }
+
+    @Then("Delete section should return {int} Bad Request status code")
+    public void deleteSectionShouldReturnBadRequestStatusCode(int statusCode) {
+        SerenityRest.then().statusCode(statusCode);
+    }
 }
