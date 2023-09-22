@@ -13,8 +13,8 @@ Group Project Team 1 <br/>
 A task and project management application used to organize tasks, to-do lists, and projects. Todoist API allows developers to interact with data and functionality from Todoist programmatically.
 
 ## Report
-<img width="100%" src="./doc/todoist_1.png"><br/>
-<img width="100%" src="./doc/todoist_1.png"><br/>
+<img width="100%" src="./doc/report_1.png"><br/>
+<img width="100%" src="./doc/report_2.png"><br/>
 
 ## Tools
 <div>
