@@ -20,9 +20,9 @@ public class GetAProjectStepDef {
     TodoistAPI todoistAPI;
 
 //    Positive Case
-    @Given("Get a project with available path ID")
-    public void getAProjectWithAvailablePathID() {
-        todoistAPI.getAProject(Constants.AVAILABLE_ID_PATH);
+    @Given("Get a project with available path ID {string}")
+    public void getAProjectWithAvailablePathID(String idPath) {
+        todoistAPI.getAProject(idPath);
     }
 
     @When("Send get a project")
@@ -30,15 +30,15 @@ public class GetAProjectStepDef {
         SerenityRest.when().get(Constants.GET_PROJECT_URL + Constants.ID_PATH);
     }
 
-    @And("Response get a project body contain as available id path")
-    public void responseGetAProjectBodyContain() {
-        SerenityRest.and().body(TodoistResponses.ID, equalTo(Constants.AVAILABLE_ID_PATH));
+    @And("Response get a project body contain as available id path {string}")
+    public void responseGetAProjectBodyContain(String idPath) {
+        SerenityRest.and().body(TodoistResponses.ID, equalTo(idPath));
     }
 
     @And("Validate valid get a project JSON schema {string}")
     public void validateValidGetAProjectJSONSchema(String jsonFile) {
         File json = new File(Constants.PROJECT_JSON_SCHEMA + jsonFile);
-        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
 

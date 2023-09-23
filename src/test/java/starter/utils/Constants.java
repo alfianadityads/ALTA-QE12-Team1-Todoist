@@ -12,7 +12,33 @@ public class Constants {
 
 //    PROJECT FEATURE
     public static String CREATE_PROJECT_URL = BASE_URL + "/projects";
-    public static String GET_PROJECT_URL = BASE_URL + "/projects";
+    public static String GET_PROJECT_URL = BASE_URL + "/projects/{id}";
+    public static String GET_ALL_PROJECTS = BASE_URL + "/projects";
+    public static String UPDATE_PROJECT_URL = BASE_URL + "/projects/{id}";
+    public static String DELETE_PROJECT_URL = BASE_URL + "/projects/{id}";
     public static String PROJECT_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/projects/";
     public static String PROJECT_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/projects/";
+
+
+//    COMMENTS FEATURE
+    public static String CREATE_COMMENT_URL = BASE_URL + "/comments";
+    public static String GET_COMMENT_URL = BASE_URL + "/comments/{id}";
+    public static String GET_ALL_COMMENTS_URL = BASE_URL + "/comments?project_id={id}";
+    public static String UPDATE_COMMENT_URL = BASE_URL + "/comments/{id}";
+    public static String UPDATE_COMMENT_ID = BASE_URL + "/comments/{id}";
+    public static String DELETE_COMMENT_URL = BASE_URL + "/comments/{id}";
+    public static String COMMENTS_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/comments/";
+    public static String COMMENTS_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/comments/";
+
+//  SECTIONS FEATURE
+
+    public static String CREATE_SECTION_URL = BASE_URL + "/sections";
+    public static String GET_SINGLE_SECTION_URL = BASE_URL + "/sections/{id}";
+    public static String GET_ALL_SECTIONS_URL = BASE_URL + "/sections?project_id={id}";
+    public static String UPDATE_SECTION_URL = BASE_URL + "/sections/{id}";
+    public static String DELETE_SECTION_URL = BASE_URL + "/sections/{id}";
+    public static String SECTION_REQ_BODY = DIR + "/src/test/resources/JSON/ReqBody/sections/";
+    public static String SECTION_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JSONSchema/sections/";
+
 }
+

@@ -23,7 +23,7 @@ public class GetAllProjectsStepDef {
 
     @When("Send get all projects")
     public void sendGetAllProjects() {
-        SerenityRest.when().get(Constants.GET_PROJECT_URL);
+        SerenityRest.when().get(Constants.GET_ALL_PROJECTS);
     }
     @And("Response body array contain {string}")
     public void responseBodyArrayContain(String arrayName) {
@@ -33,7 +33,7 @@ public class GetAllProjectsStepDef {
     @And("Validate valid get all projects JSON schema {string}")
     public void validateValidGetAllProjectsJSONSchema(String jsonFile) {
         File json = new File(Constants.PROJECT_JSON_SCHEMA + jsonFile);
-        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+        SerenityRest.and().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
 }
